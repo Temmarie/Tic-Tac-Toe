@@ -1,4 +1,4 @@
-# The first step is to display a welcome message 
+# The first step is to display a welcome message
 puts 'Welcome to the Tic-Tac-Toe Game'
 puts
 
@@ -10,7 +10,6 @@ player_1_name = gets.chomp
 print 'Player-2 name please: '
 player_2_name = gets.chomp
 puts
-
 
 puts "#{player_1_name} you are Player-1 and your symbol is X"
 puts
