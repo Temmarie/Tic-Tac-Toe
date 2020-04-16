@@ -54,3 +54,26 @@ puts '----------'
 puts 'O | 5 | 6 '
 puts '----------'
 puts '7 | 8 | 9 '
+
+print "\n#{player_2_name} select cell between 1-9\n" # the game continues as intended
+puts
+# assuming Player-2 selects cell 8, the output is displayed next
+puts 'X | X | 3 '
+puts '----------'
+puts 'O | 5 | 6 '
+puts '----------'
+puts '7 | O | 9 '
+
+print "\n#{player_1_name} select cell between 1-9\n" # the game continues as intended
+puts
+# assuming Player-1 selects cell 3, the output is displayed next
+puts 'X | X | X '
+puts '----------'
+puts 'O | 5 | 6 '
+puts '----------'
+puts '7 | O | 9 '
+
+print "\n#{player_1_name} wins!!"
+# At this point, the game asks the players if they'll like to play again, if yes, they'll press enter to start again.
+# If not then they'll exit the game.
+# If they do draw however, they'll be asked to play again.
