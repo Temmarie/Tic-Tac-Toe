@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 # The first step is to display a welcome message
+
 puts 'Welcome to the Tic-Tac-Toe Game'
 puts
 
@@ -29,7 +30,9 @@ puts '7 | 8 | 9 '
 
 print "\n#{player_1_name} select cell between 1-9\n"
 puts
+
 # assuming Player-1 selects cell 1, the output is displayed next
+
 puts 'X | 2 | 3 '
 puts '----------'
 puts '4 | 5 | 6 '
@@ -37,7 +40,9 @@ puts '----------'
 puts '7 | 8 | 9 '
 
 print "\n#{player_2_name} select cell between 1-9\n"
+
 # If Player-2 selects cell 1, a message should appear telling the player to select another cell.
+
 puts "#{player_2_name}, this cell is already taken, choose again!"
 print "\n#{player_2_name} select cell between 1-9\n" # Player selects cell 4
 puts
