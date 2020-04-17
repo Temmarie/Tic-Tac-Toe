@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+
+# The first step is to display a welcome message
 puts 'Welcome to the Tic-Tac-Toe Game'
 puts
 
