@@ -83,6 +83,7 @@ puts '7 | 8 | 9 '
 # end
 # if player_1 has his symbols in an order that matches a winning output game_on = false and the loop should break
 print "\n#{player_1_name} wins!!"
+puts
 # At this point, the game asks the players if they'll like to play again, if yes, they'll press enter to start again.
 # If not then they'll exit the game.
 
