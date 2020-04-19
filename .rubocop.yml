@@ -48,7 +48,3 @@ Style/HashTransformValues:
   Enabled: true
 Lint/RaiseException:
   Enabled: true
-Lint/StructNewOverride:
-  Enabled: true
-Lint/ScriptPermission:
-  Enabled: true
