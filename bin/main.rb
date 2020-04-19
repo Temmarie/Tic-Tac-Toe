@@ -28,57 +28,57 @@ puts '7 | 8 | 9 '
 # game_on = true
 
 # while game_on
-  # Display game board and ask user to select a cell for their symbol
-    print "\n#{player_1_name} select cell between 1-9\n"
-    puts
+# Display game board and ask user to select a cell for their symbol
+print "\n#{player_1_name} select cell between 1-9\n"
+puts
 
-    # assuming Player-1 selects cell 1, the output is displayed next
+# assuming Player-1 selects cell 1, the output is displayed next
 
-    puts 'X | 2 | 3 '
-    puts '----------'
-    puts '4 | 5 | 6 '
-    puts '----------'
-    puts '7 | 8 | 9 '
+puts 'X | 2 | 3 '
+puts '----------'
+puts '4 | 5 | 6 '
+puts '----------'
+puts '7 | 8 | 9 '
 
-    print "\n#{player_2_name} select cell between 1-9\n"
+print "\n#{player_2_name} select cell between 1-9\n"
 
-    # If Player-2 selects cell 1, a message should appear telling the player to select another cell.
+# If Player-2 selects cell 1, a message should appear telling the player to select another cell.
 
-    puts "#{player_2_name}, this cell is already taken, choose again!"
-    print "\n#{player_2_name} select cell between 1-9\n" # Player selects cell 4
-    puts
-    puts 'X | 2 | 3 '
-    puts '----------'
-    puts 'O | 5 | 6 '
-    puts '----------'
-    puts '7 | 8 | 9 '
+puts "#{player_2_name}, this cell is already taken, choose again!"
+print "\n#{player_2_name} select cell between 1-9\n" # Player selects cell 4
+puts
+puts 'X | 2 | 3 '
+puts '----------'
+puts 'O | 5 | 6 '
+puts '----------'
+puts '7 | 8 | 9 '
 
-    print "\n#{player_1_name} select cell between 1-9\n" # Assuming he selects cell 2
-    puts
+print "\n#{player_1_name} select cell between 1-9\n" # Assuming he selects cell 2
+puts
 
-    puts 'X | X | 3 '
-    puts '----------'
-    puts 'O | 5 | 6 '
-    puts '----------'
-    puts '7 | 8 | 9 '
+puts 'X | X | 3 '
+puts '----------'
+puts 'O | 5 | 6 '
+puts '----------'
+puts '7 | 8 | 9 '
 
-    print "\n#{player_2_name} select cell between 1-9\n" # the game continues as intended
-    puts
-    # assuming Player-2 selects cell 8, the output is displayed next
-    puts 'X | X | 3 '
-    puts '----------'
-    puts 'O | 5 | 6 '
-    puts '----------'
-    puts '7 | O | 9 '
+print "\n#{player_2_name} select cell between 1-9\n" # the game continues as intended
+puts
+# assuming Player-2 selects cell 8, the output is displayed next
+puts 'X | X | 3 '
+puts '----------'
+puts 'O | 5 | 6 '
+puts '----------'
+puts '7 | O | 9 '
 
-    print "\n#{player_1_name} select cell between 1-9\n" # the game continues as intended
-    puts
-    # assuming Player-1 selects cell 3, the output is displayed next
-    puts 'X | X | X '
-    puts '----------'
-    puts 'O | 5 | 6 '
-    puts '----------'
-    puts '7 | O | 9 '
+print "\n#{player_1_name} select cell between 1-9\n" # the game continues as intended
+puts
+# assuming Player-1 selects cell 3, the output is displayed next
+puts 'X | X | X '
+puts '----------'
+puts 'O | 5 | 6 '
+puts '----------'
+puts '7 | O | 9 '
 
 # end
 # if player_1 has his symbols in an order that matches a winning output game_on = false and the loop should break
