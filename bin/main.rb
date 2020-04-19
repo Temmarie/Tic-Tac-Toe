@@ -19,65 +19,72 @@ puts
 
 print "\nThis is Your Tic Tac Toe Board\n"
 
-# Display game board and ask user to select a cell for their symbol
 puts '1 | 2 | 3 '
 puts '----------'
 puts '4 | 5 | 6 '
 puts '----------'
 puts '7 | 8 | 9 '
 
-print "\n#{player_1_name} select cell between 1-9\n"
-puts
+# game_on = true
 
-# assuming Player-1 selects cell 1, the output is displayed next
+# while game_on
+  # Display game board and ask user to select a cell for their symbol
+    print "\n#{player_1_name} select cell between 1-9\n"
+    puts
 
-puts 'X | 2 | 3 '
-puts '----------'
-puts '4 | 5 | 6 '
-puts '----------'
-puts '7 | 8 | 9 '
+    # assuming Player-1 selects cell 1, the output is displayed next
 
-print "\n#{player_2_name} select cell between 1-9\n"
+    puts 'X | 2 | 3 '
+    puts '----------'
+    puts '4 | 5 | 6 '
+    puts '----------'
+    puts '7 | 8 | 9 '
 
-# If Player-2 selects cell 1, a message should appear telling the player to select another cell.
+    print "\n#{player_2_name} select cell between 1-9\n"
 
-puts "#{player_2_name}, this cell is already taken, choose again!"
-print "\n#{player_2_name} select cell between 1-9\n" # Player selects cell 4
-puts
-puts 'X | 2 | 3 '
-puts '----------'
-puts 'O | 5 | 6 '
-puts '----------'
-puts '7 | 8 | 9 '
+    # If Player-2 selects cell 1, a message should appear telling the player to select another cell.
 
-print "\n#{player_1_name} select cell between 1-9\n" # Assuming he selects cell 2
-puts
+    puts "#{player_2_name}, this cell is already taken, choose again!"
+    print "\n#{player_2_name} select cell between 1-9\n" # Player selects cell 4
+    puts
+    puts 'X | 2 | 3 '
+    puts '----------'
+    puts 'O | 5 | 6 '
+    puts '----------'
+    puts '7 | 8 | 9 '
 
-puts 'X | X | 3 '
-puts '----------'
-puts 'O | 5 | 6 '
-puts '----------'
-puts '7 | 8 | 9 '
+    print "\n#{player_1_name} select cell between 1-9\n" # Assuming he selects cell 2
+    puts
 
-print "\n#{player_2_name} select cell between 1-9\n" # the game continues as intended
-puts
-# assuming Player-2 selects cell 8, the output is displayed next
-puts 'X | X | 3 '
-puts '----------'
-puts 'O | 5 | 6 '
-puts '----------'
-puts '7 | O | 9 '
+    puts 'X | X | 3 '
+    puts '----------'
+    puts 'O | 5 | 6 '
+    puts '----------'
+    puts '7 | 8 | 9 '
 
-print "\n#{player_1_name} select cell between 1-9\n" # the game continues as intended
-puts
-# assuming Player-1 selects cell 3, the output is displayed next
-puts 'X | X | X '
-puts '----------'
-puts 'O | 5 | 6 '
-puts '----------'
-puts '7 | O | 9 '
+    print "\n#{player_2_name} select cell between 1-9\n" # the game continues as intended
+    puts
+    # assuming Player-2 selects cell 8, the output is displayed next
+    puts 'X | X | 3 '
+    puts '----------'
+    puts 'O | 5 | 6 '
+    puts '----------'
+    puts '7 | O | 9 '
 
+    print "\n#{player_1_name} select cell between 1-9\n" # the game continues as intended
+    puts
+    # assuming Player-1 selects cell 3, the output is displayed next
+    puts 'X | X | X '
+    puts '----------'
+    puts 'O | 5 | 6 '
+    puts '----------'
+    puts '7 | O | 9 '
+
+# end
+# if player_1 has his symbols in an order that matches a winning output game_on = false and the loop should break
 print "\n#{player_1_name} wins!!"
 # At this point, the game asks the players if they'll like to play again, if yes, they'll press enter to start again.
 # If not then they'll exit the game.
-# If they do draw however, they'll be asked to play again.
+
+# if no player has a winning output, but the board is filled with their symbols, game_on = false and the loop will break
+# and it will output game is a draw and ask if they want to play again.
