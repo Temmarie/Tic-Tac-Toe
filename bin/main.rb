@@ -1,5 +1,32 @@
 #!/usr/bin/env ruby
 require_relative '../lib/board.rb'
+require_relative '../lib/players.rb'
+require_relative '../lib/gameplay.rb'
+
+puts "  WELCOME TO TIC-TAC-TOE"
+puts
+puts "\t X | O | X"
+puts "\t---|---|---"
+puts "\t O | X | O"
+puts "\t---|---|---"
+puts "\t X | O | X"
+puts
+
+print "Player One name please: "
+player_1 = gets.chomp
+puts
+print "Player Two name please: "
+player_2 = gets.chomp
+puts
+player1 = Players.new(player_1, 'X')
+player2 = Players.new(player_2, 'O')
+puts "#{player1.name} your symbol is #{player1.char}"
+puts
+puts "#{player2.name} your symbol is #{player2.char}"
+puts
+puts 'This is your playing board'
+board = Board.new
+puts board.display_board
 
 # puts 'Welcome to the Tic-Tac-Toe Game'
 # puts
