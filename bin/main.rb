@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require_relative '../lib/board.rb'
 
 # puts 'Welcome to the Tic-Tac-Toe Game'
 # puts

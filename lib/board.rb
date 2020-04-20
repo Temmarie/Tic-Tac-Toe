@@ -14,11 +14,10 @@ class Board
   end
 
   def display_board
-    puts "\n #{@positions[0]} | #{@positions[1]}| #{@positions[2]}"
-    puts "\n #{@positions[3]} | #{@positions[4]}| #{@positions[5]}"
-    puts "\n #{@positions[6]} | #{@positions[7]}| #{@positions[8]}"             
+    "\n \t#{@positions[0]} | #{@positions[1]} | #{@positions[2]}"\
+    "\n \t---------"\
+    "\n \t#{@positions[3]} | #{@positions[4]} | #{@positions[5]}"\
+    "\n \t---------"\
+    "\n \t#{@positions[6]} | #{@positions[7]} | #{@positions[8]}"             
   end
 end
-
-board = Board.new
-board.display_board(positions)
