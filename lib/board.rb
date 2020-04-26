@@ -1,6 +1,7 @@
 class Board
-    def initialize
-    @positions = [1,2,3,4,5,6,7,8,9]
+  attr_accessor :positions
+  def initialize
+    @positions = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     @win_combination = [
       [0, 1, 2],
       [3, 4, 5],
@@ -18,6 +19,14 @@ class Board
     "\n \t---------"\
     "\n \t#{@positions[3]} | #{@positions[4]} | #{@positions[5]}"\
     "\n \t---------"\
-    "\n \t#{@positions[6]} | #{@positions[7]} | #{@positions[8]}"             
+    "\n \t#{@positions[6]} | #{@positions[7]} | #{@positions[8]}"
+  end
+
+  def full?
+    @positions.all? { |cell| cell == 'X' || cell == 'O' }
+  end
+
+  def won
+     @win_comibination.include?(player1_input) || @win_comibination.include?(player2_input)
   end
 end
