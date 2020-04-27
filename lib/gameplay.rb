@@ -1,15 +1,15 @@
 class GamePlay
-  def input_num?(input)
-    input.between?(1, 9)
-  end
+  # def input_num?(input)
+  #   input.between?(1, 9)
+  # end
 
-  def player_move(char, input)
-    @positions[input - 1] = char
-  end
+  # def player_move(char, input)
+  #   @positions[input - 1] = char
+  # end
 
-  def cell_taken?(input)
-    (@positions[input] == 'X') || (@positions[input] == 'O')
-  end
+  # def cell_taken?(input)
+  #   (@positions[input] == 'X') || (@positions[input] == 'O')
+  # end
 
   # def valid_move?(board, index)
   #   if (board[index] == ' ') || cell_taken? == false

@@ -31,6 +31,8 @@ elsif id2 == 'E'
   players2 = gets.chomp
 end
 puts
+# playa1 = []
+# playa2 = []
 player1 = Players.new(players1, 'X')
 player2 = Players.new(players2, 'O')
 puts "#{player1.name} your symbol is #{player1.char}"
@@ -44,13 +46,23 @@ puts
 
 playerz = [player1, player2]
 
-3.times do
+game_on = true
+
+while game_on
   playerz.each do |playa|
-    print "#{playa.name} choose a cell: "
-    input = gets.chomp.to_i
-    board.positions[input - 1] = playa.char
-    puts board.display_board
-    puts
+    if game_on
+      print "#{playa.name} choose a cell: "
+      input = gets.chomp.to_i
+      inputs = input - 1
+      playa.player_input << inputs
+      board.positions[inputs] = playa.char
+      puts board.display_board
+    end
+    if playa.player_input.size == 3 && board.won?(playa.player_input) == true 
+      puts "#{playa.name} Won!"
+
+      game_on = false
+    end
   end
 end
 

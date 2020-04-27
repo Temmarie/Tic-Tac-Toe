@@ -1,5 +1,5 @@
 class Board
-  attr_accessor :positions
+  attr_accessor :positions, :win_combination
   def initialize
     @positions = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     @win_combination = [
@@ -26,7 +26,7 @@ class Board
     @positions.all? { |cell| cell == 'X' || cell == 'O' }
   end
 
-  def won
-     @win_comibination.include?(player1_input) || @win_comibination.include?(player2_input)
+  def won?(player_input)
+    @win_combination.include?(player_input)
   end
 end
