@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 require_relative '../lib/board.rb'
 require_relative '../lib/players.rb'
-require_relative '../lib/gameplay.rb'
 
 puts '  WELCOME TO TIC-TAC-TOE'
 puts
