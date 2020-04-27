@@ -22,11 +22,9 @@ class Board
     "\n \t#{@positions[6]} | #{@positions[7]} | #{@positions[8]}"
   end
 
-  def full?
-    @positions.all? { |cell| cell == 'X' || cell == 'O' }
-  end
-
   def won?(player_input)
-    @win_combination.include?(player_input)
+    @win_combination.each { |arr| return true if arr.all? {|x| player_input.include?(x)} }
+
+    false
   end
 end
