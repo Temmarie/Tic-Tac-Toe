@@ -12,22 +12,22 @@ puts "\t X | O | X"
 puts
 
 
-print "Player One press \'E'\ to enter name or \'G'\ to play as guest: "
+print "Player One press \'P'\ to enter name or \'Enter'\ to play as guest: "
 id = gets.chomp.upcase
-if id == 'G'
-  players1 = 'Guest__01'
-elsif id == 'E'
+if id == 'P'
   print 'Player One name please: '
   players1 = gets.chomp
+else
+  players1 = 'Guest__01'
 end
 puts
-print "Player Two press \'E'\ to enter name or \'G'\ to play as guest: "
+print "Player Two press \'P'\ to enter name or \'Enter'\ to play as guest: "
 id2 = gets.chomp.upcase
-if id2 == 'G'
-  players2 = 'Guest__02'
-elsif id2 == 'E'
+if id2 == 'P'
   print 'Player Two name please: '
   players2 = gets.chomp
+else
+  players2 = 'Guest__02'
 end
 puts
 
@@ -57,9 +57,9 @@ while game_on
         
         
       
-        playa.player_input << inputs
+       
         if board.positions.include?(input)
-          
+          playa.player_input << inputs
           board.positions[inputs] = playa.char
           break
         else
@@ -69,9 +69,10 @@ while game_on
         end
       end
       puts board.display_board
+      puts
     end 
     if board.won?(playa.player_input)
-      puts "#{playa.name} Won!"
+      puts "#{playa.name} Wins!!!"
        
       game_on = false
       break
@@ -80,6 +81,19 @@ while game_on
       puts "Game is Draw"
       
       game_on = false
+      break
+    end
+  end
+
+  if !game_on
+    print "\n Do you want to play again? [yes(y) / no(n)]: "
+    play_again = gets.chomp.downcase
+
+    if play_again == 'yes' or play_again == 'y'
+      puts "\n Sorry not available yet, this is the beta version, new updates coming :)"
+      break
+    elsif play_again == 'no' or play_again == 'n'
+      puts 'Thanks for playing!'
       break
     end
   end
