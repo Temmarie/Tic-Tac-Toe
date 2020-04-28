@@ -5,6 +5,5 @@ class Players
     @name = name
     @char = char
     @player_input = []
-    
   end
 end

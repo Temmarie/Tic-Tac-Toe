@@ -23,7 +23,7 @@ class Board
   end
 
   def won?(player_input)
-    @win_combination.each { |arr| return true if arr.all? {|x| player_input.include?(x)} }
+    @win_combination.each { |arr| return true if arr.all? { |x| player_input.include?(x) } }
 
     false
   end

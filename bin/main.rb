@@ -11,7 +11,6 @@ puts "\t---|---|---"
 puts "\t X | O | X"
 puts
 
-
 print "Player One press \'P'\ to enter name or \'Enter'\ to play as guest: "
 id = gets.chomp.upcase
 if id == 'P'
@@ -54,49 +53,44 @@ while game_on
         print "#{playa.name} choose a cell: "
         input = gets.chomp.to_i
         inputs = input - 1
-        
-        
-      
-       
+
         if board.positions.include?(input)
           playa.player_input << inputs
           board.positions[inputs] = playa.char
           break
         else
-          puts "Invalid move/character try again!"
+          puts 'Invalid move/character try again!'
           puts
           next
         end
       end
       puts board.display_board
       puts
-    end 
+    end
     if board.won?(playa.player_input)
       puts "#{playa.name} Wins!!!"
-       
+
       game_on = false
       break
 
-    elsif board.positions.none?(Integer) 
-      puts "Game is Draw"
-      
+    elsif board.positions.none?(Integer)
+      puts 'Game is Draw'
+
       game_on = false
       break
     end
   end
 
-  if !game_on
-    print "\n Do you want to play again? [yes(y) / no(n)]: "
-    play_again = gets.chomp.downcase
+  next if game_on
 
-    if play_again == 'yes' or play_again == 'y'
-      puts "\n Sorry not available yet, this is the beta version, new updates coming :)"
-      break
-    elsif play_again == 'no' or play_again == 'n'
-      puts 'Thanks for playing!'
-      break
-    end
+  print "\n Do you want to play again? [yes(y) / no(n)]: "
+  play_again = gets.chomp.downcase
+
+  if play_again == 'yes' or play_again == 'y'
+    puts "\n Sorry not available yet, this is the beta version, new updates coming :)"
+    break
+  elsif play_again == 'no' or play_again == 'n'
+    puts 'Thanks for playing!'
+    break
   end
 end
-
-
