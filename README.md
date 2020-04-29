@@ -1,11 +1,13 @@
 # Tic-Tac-Toe Project
 We built a tic-tac-toe game on the command line where two human players can play against each other and the board is displayed in between turns.
-It was made as a collaborative project in Ruby using OOP concepts
+It was made as a collaborative project in Ruby using OOP concepts.
 
 # What it does
 The game collects input from the users and replaces the board positions based on the user inputs with their individual characters.
 To win the game, a player has to have 3 of their characters in a row (vertically, horizontally or diagonally).
 
+# Live demo
+[Tic Tac Toe](https://repl.it/@OsongOA7/TicTacToe)
 # Built With
 Ruby
 
