@@ -1,91 +1,105 @@
 #!/usr/bin/env ruby
+require_relative '../lib/board.rb'
+require_relative '../lib/players.rb'
 
-puts 'Welcome to the Tic-Tac-Toe Game'
+puts '  WELCOME TO TIC-TAC-TOE'
+puts
+puts "\t X | O | X"
+puts "\t---|---|---"
+puts "\t O | X | O"
+puts "\t---|---|---"
+puts "\t X | O | X"
 puts
 
-# In this step we require the users to input their names so we can replace Player-1 and Player-2 with them
-
-print 'Player-1 name please: '
-player_1_name = gets.chomp
-
-print 'Player-2 name please: '
-player_2_name = gets.chomp
+print "Player One press \'P'\ to enter name or \'Enter'\ to play as guest: "
+id = gets.chomp.upcase
+if id == 'P'
+  print 'Player One name please: '
+  players1 = gets.chomp
+else
+  players1 = 'Guest__01'
+end
+puts
+print "Player Two press \'P'\ to enter name or \'Enter'\ to play as guest: "
+id2 = gets.chomp.upcase
+if id2 == 'P'
+  print 'Player Two name please: '
+  players2 = gets.chomp
+else
+  players2 = 'Guest__02'
+end
 puts
 
-puts "#{player_1_name} you are Player-1 and your symbol is X"
-puts
-puts "#{player_2_name} you are Player-2 and your symbol is O"
-puts
+game = true
 
-print "\nThis is Your Tic Tac Toe Board\n"
+while game
+  player1 = Players.new(players1, 'X')
+  player2 = Players.new(players2, 'O')
+  puts "#{player1.name} your symbol is #{player1.char}"
+  puts
+  puts "#{player2.name} your symbol is #{player2.char}"
+  puts
+  puts 'This is your playing board'
+  board = Board.new
+  puts board.display_board
+  puts
 
-puts '1 | 2 | 3 '
-puts '----------'
-puts '4 | 5 | 6 '
-puts '----------'
-puts '7 | 8 | 9 '
+  playerz = [player1, player2]
 
-# game_on = true
+  game_on = true
 
-# while game_on
-# Display game board and ask user to select a cell for their symbol
-print "\n#{player_1_name} select cell between 1-9\n"
-puts
+  while game_on
+    playerz.each do |playa|
+      if game_on
 
-# assuming Player-1 selects cell 1, the output is displayed next
+        loop do
+          print "#{playa.name} choose a cell: "
+          input = gets.chomp.to_i
+          inputs = input - 1
 
-puts 'X | 2 | 3 '
-puts '----------'
-puts '4 | 5 | 6 '
-puts '----------'
-puts '7 | 8 | 9 '
+          if board.valid_input?(input)
+            playa.player_input << inputs
+            board.update_board(playa, inputs)
+            break
+          else
+            puts 'Invalid move/character try again!'
+            puts
+            next
+          end
+        end
+        puts board.display_board
+        puts
+      end
+      if board.won?(playa.player_input)
+        puts "#{playa.name} Wins!!!"
 
-print "\n#{player_2_name} select cell between 1-9\n"
+        game_on = false
+        break
 
-# If Player-2 selects cell 1, a message should appear telling the player to select another cell.
+      elsif board.draw?
+        puts 'Game is Draw'
 
-puts "#{player_2_name}, this cell is already taken, choose again!"
-print "\n#{player_2_name} select cell between 1-9\n" # Player selects cell 4
-puts
-puts 'X | 2 | 3 '
-puts '----------'
-puts 'O | 5 | 6 '
-puts '----------'
-puts '7 | 8 | 9 '
+        game_on = false
+        break
+      end
+    end
+    game = false
+  end
+  next if game
 
-print "\n#{player_1_name} select cell between 1-9\n" # Assuming he selects cell 2
-puts
+  puts
+  print 'Want to play again? [yes(y) or no(n)]: '
+  value = gets.chomp
+  puts
 
-puts 'X | X | 3 '
-puts '----------'
-puts 'O | 5 | 6 '
-puts '----------'
-puts '7 | 8 | 9 '
-
-print "\n#{player_2_name} select cell between 1-9\n" # the game continues as intended
-puts
-# assuming Player-2 selects cell 8, the output is displayed next
-puts 'X | X | 3 '
-puts '----------'
-puts 'O | 5 | 6 '
-puts '----------'
-puts '7 | O | 9 '
-
-print "\n#{player_1_name} select cell between 1-9\n" # the game continues as intended
-puts
-# assuming Player-1 selects cell 3, the output is displayed next
-puts 'X | X | X '
-puts '----------'
-puts 'O | 5 | 6 '
-puts '----------'
-puts '7 | O | 9 '
-
-# end
-# if player_1 has his symbols in an order that matches a winning output game_on = false and the loop should break
-print "\n#{player_1_name} wins!!"
-puts
-# At this point, the game asks the players if they'll like to play again, if yes, they'll press enter to start again.
-# If not then they'll exit the game.
-
-# if no player has a winning output, but the board is filled with their symbols, game_on = false and the loop will break
-# and it will output game is a draw and ask if they want to play again.
+  if value == 'yes' || value == 'y'
+    system('cls') || system('clear')
+    game = true
+    next
+  else
+    puts
+    puts 'Thanks for playing'
+    game = false
+    break
+  end
+end

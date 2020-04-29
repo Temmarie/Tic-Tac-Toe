@@ -14,6 +14,8 @@ Metrics/AbcSize:
   Max: 50
 Metrics/ClassLength:
   Max: 150
+Metrics/BlockNesting:
+  Enabled: false
 Metrics/BlockLength:
   ExcludedMethods: ['describe']
   Max: 30
@@ -28,6 +30,8 @@ Style/EachForSimpleLoop:
 Style/AndOr:
   Enabled: false
 Style/DefWithParentheses:
+  Enabled: false
+Style/MultipleComparison:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
