@@ -12,7 +12,7 @@ Ruby
 # Getting Started
 To get a local copy up and running follow these simple example steps.
 
-Clone the project unto your local machine cd to the folder and run "bin/main.rb" on your terminal
+Clone the project unto your local machine cd to the folder and run `bin/main.rb` on your terminal
 
 # Instructions to Play
 - The game is played on a grid that's 3 squares by 3 squares.
