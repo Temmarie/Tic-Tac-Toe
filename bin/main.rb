@@ -11,28 +11,28 @@ puts "\t---|---|---"
 puts "\t X | O | X"
 puts
 
+print "Player One press \'P'\ to enter name or \'Enter'\ to play as guest: "
+id = gets.chomp.upcase
+if id == 'P'
+  print 'Player One name please: '
+  players1 = gets.chomp
+else
+  players1 = 'Guest__01'
+end
+puts
+print "Player Two press \'P'\ to enter name or \'Enter'\ to play as guest: "
+id2 = gets.chomp.upcase
+if id2 == 'P'
+  print 'Player Two name please: '
+  players2 = gets.chomp
+else
+  players2 = 'Guest__02'
+end
+puts
+
 game = true
 
 while game
-  print "Player One press \'P'\ to enter name or \'Enter'\ to play as guest: "
-  id = gets.chomp.upcase
-  if id == 'P'
-    print 'Player One name please: '
-    players1 = gets.chomp
-  else
-    players1 = 'Guest__01'
-  end
-  puts
-  print "Player Two press \'P'\ to enter name or \'Enter'\ to play as guest: "
-  id2 = gets.chomp.upcase
-  if id2 == 'P'
-    print 'Player Two name please: '
-    players2 = gets.chomp
-  else
-    players2 = 'Guest__02'
-  end
-  puts
-
   player1 = Players.new(players1, 'X')
   player2 = Players.new(players2, 'O')
   puts "#{player1.name} your symbol is #{player1.char}"
@@ -57,9 +57,9 @@ while game
           input = gets.chomp.to_i
           inputs = input - 1
 
-          if board.positions.include?(input)
+          if board.valid_input?(input)
             playa.player_input << inputs
-            board.positions[inputs] = playa.char
+            board.update_board(playa, inputs)
             break
           else
             puts 'Invalid move/character try again!'
@@ -76,7 +76,7 @@ while game
         game_on = false
         break
 
-      elsif board.positions.none?(Integer)
+      elsif board.draw?
         puts 'Game is Draw'
 
         game_on = false

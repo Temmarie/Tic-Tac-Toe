@@ -27,4 +27,16 @@ class Board
 
     false
   end
+
+  def valid_input?(input)
+    @positions.include?(input)
+  end
+
+  def update_board(current_player, inputs)
+    @positions[inputs] = current_player.char
+  end
+
+  def draw?
+    @positions.none?(Integer)
+  end
 end
