@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 # spec/calculator_spec.rb
-require './Tic-Tac-Toe/bin/main.rb'
-require './Tic-Tac-Toe/lib/players.rb'
+require './bin/main.rb'
+require './lib/players.rb'
 
 describe Board do
   let(:tictactoe) { Board.new }
