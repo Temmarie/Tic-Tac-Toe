@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # spec/calculator_spec.rb
 require './bin/main.rb'
 require './lib/players.rb'
