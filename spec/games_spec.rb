@@ -1,6 +1,6 @@
-# spec/calculator_spec.rb
 require './lib/players.rb'
 require './lib/board.rb'
+
 describe Board do
   let(:tictactoe) { Board.new }
   let(:player) { Players.new('Grace', 'X') }
