@@ -6,7 +6,7 @@ describe Board do
   let(:player) { Players.new('Grace', 'X') }
 
   describe '#won?' do
-    it 'returns true if all elements of the array match the winning combination' do
+    it 'returns true if the players input includes any of the winning combination' do
       arr = [
         [0, 1, 2],
         [3, 4, 5],
@@ -18,28 +18,36 @@ describe Board do
         [0, 4, 8],
         [1, 4, 7]
       ]
+
+      input = [1, 3, 2, 0, 5]
+
       arr.each do |ele|
+        true if ele.all? { |x| input.include?(x) }
         expect(tictactoe.won?(ele)).to eql(true)
       end
-    end
 
-    it 'returns false if none of the elements of the array match the winning combination' do
+    it 'returns false if the players input does not include any of the winning combination' do
       arr = [
-        [0, 1, 3],
-        [1, 2, 9],
-        [2, 3, 8],
-        [3, 4, 7],
-        [4, 5, 6],
-        [5, 6, 5],
-        [6, 7, 4],
-        [7, 8, 3],
-        [8, 9, 2]
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [2, 4, 6],
+        [0, 4, 8],
+        [1, 4, 7]
       ]
+
+      input = [9, 8, 4, 0, 1]
+
       arr.each do |ele|
+        true if ele.all? { |x| input.include?(x) }
         expect(tictactoe.won?(ele)).to eql(false)
       end
     end
   end
+  
 
   describe '#valid_input?' do
     it 'returns true if the user input is included in the board positions' do
@@ -63,11 +71,18 @@ describe Board do
   end
 
   describe '#draw?' do
-    it 'returns true if there are no positions to occupy on the board' do
-      9.times do |num|
-        tictactoe.update_board(player, num)
+    it 'returns true when the game has not been won and there are no integers on the board' do
+      # 9.times do |char|
+      #   tictactoe.update_board(player, char)
+      # end
+      # expect(tictactoe.draw?).to eql(true)
+      if tictactoe.!won? do 
+        expect(tictactoe.draw?).to eql(true)
       end
-      expect(tictactoe.draw?).to eql(true)
+
+      if positions.none?(Integer) do 
+        expect(tictactoe.draw?).to eql(true)
+      end
     end
   end
 end
