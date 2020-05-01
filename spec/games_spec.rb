@@ -22,14 +22,14 @@ RSpec.describe Board do
     it 'returns true if the players input includes any of the winning combinations' do
       input = [1, 3, 2, 0, 5]
 
-      arr.each { |sub_arr| sub_arr.all? { |ele| input.include?(ele) } }
+      arr.each { |sub_arr| sub_arr.all? { |ele| input.include?(ele) } } # => true
       expect(tictactoe.won?(input)).to eql(true)
     end
 
     it 'returns false if the players input does not include any of the winning combinations' do
       input = [8, 5, 7, 1]
 
-      arr.each { |sub_arr| sub_arr.all? { |ele| input.include?(ele) } }
+      arr.each { |sub_arr| sub_arr.all? { |ele| input.include?(ele) } } # => false
       expect(tictactoe.won?(input)).to eql(false)
     end
   end
