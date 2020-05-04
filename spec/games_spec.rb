@@ -67,7 +67,14 @@ RSpec.describe Board do
 
   describe '#display_board' do
     it 'returns the board' do
-      expect(tictactoe.display_board).to be_kind_of(String)
+      tictactoe.update_board(player, 0)
+      tictactoe.update_board(player, 2)
+      result = "\n \tX | 2 | X"\
+               "\n \t---------"\
+               "\n \t4 | 5 | 6"\
+               "\n \t---------"\
+               "\n \t7 | 8 | 9"
+      expect(tictactoe.display_board).to eql(result)
     end
   end
 end
