@@ -70,4 +70,4 @@ RSpec.describe Board do
       expect(tictactoe.display_board).to be_kind_of(String)
     end
   end
-  end
+end
