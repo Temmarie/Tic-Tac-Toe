@@ -53,6 +53,10 @@ RSpec.describe Board do
       tictactoe.update_board(player, 1)
       expect(tictactoe.positions[1]).to eql('X')
     end
+
+    it 'prompts the user to select another cell if input is invalid and position is unavailable' do
+      expect(tictactoe.update_board).to be false if tictactoe.positions.all?(String) && tictactoe.draw?
+    end
   end
 
   describe '#draw?' do
@@ -60,4 +64,10 @@ RSpec.describe Board do
       expect(tictactoe.draw?).to be true if tictactoe.positions.all?(String) && !tictactoe.won?
     end
   end
-end
+
+  describe '#display_board' do
+    it 'returns the board' do
+      expect(tictactoe.display_board).to be_kind_of(String)
+    end
+  end
+  end
