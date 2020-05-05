@@ -65,6 +65,14 @@ RSpec.describe Board do
     it 'returns true when the game has not been won and there are no integers on the board' do
       expect(tictactoe.draw?).to be true if tictactoe.positions.all?(String) && !tictactoe.won?
     end
+
+    it 'returns false when there are integers on the board' do
+      expect(tictactoe.draw?).to be false if tictactoe.positions.any?(Integer)
+    end
+
+    it 'returns false when the game has been won and there are integers on the board' do
+      expect(tictactoe.draw?).to be false if !tictactoe.positions.all?(Integer) && tictactoe.won?
+    end
   end
 
   describe '#display_board' do
