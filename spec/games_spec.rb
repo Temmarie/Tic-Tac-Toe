@@ -4,6 +4,7 @@ require './lib/board.rb'
 RSpec.describe Board do
   let(:tictactoe) { Board.new }
   let(:player) { Players.new('Grace', 'X') }
+  let(:player2) { Players.new('Jay', 'O') }
   let(:arr) do
     [
       [0, 1, 2],
@@ -55,7 +56,8 @@ RSpec.describe Board do
     end
 
     it 'prompts the user to select another cell if input is invalid and position is unavailable' do
-      expect(tictactoe.update_board).to be false if tictactoe.positions.all?(String) && tictactoe.draw?
+      tictactoe.update_board(player, 1)
+      expect(tictactoe.update_board(player2, 1)).to be false if tictactoe.valid_input?(1) == false
     end
   end
 
